@@ -1,0 +1,43 @@
+.scrollbox {
+    height: 157.5px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.scrollbox .col-lg-3 {
+    display: inline-block;
+    float: none;
+}
+
+.scrollbox .col-md-6 {
+    display: inline-block;
+    float: none;
+}
+
+.scrollbox .panel:hover {
+    cursor: pointer;
+}
+
+.scrollbox .panel:hover {
+    opacity: 0.7;
+}
+
+.mod-fade {
+    opacity: 0.5;
+}
+
+.mod-fade:active {
+    opacity: 1;
+}
+
+.mod-clicked-fade {
+    opacity: 1;
+}
+
+.name {
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

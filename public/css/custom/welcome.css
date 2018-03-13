@@ -1,0 +1,258 @@
+html, body {
+    height: 100%;
+}
+
+.navbar-default .nav>li>a, .navbar-default .nav>li>a:focus {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    color: #222;
+}
+
+.navbar-default .nav>li>a:hover, .navbar-default .nav>li>a:focus:hover {
+    color: #f05f40;
+}
+
+.navbar-mod-brand {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+section {
+    padding: 100px 0;
+    min-height: 500px;
+}
+
+.section-mod-primary {
+    background-color: #ffffff;
+}
+
+.section-mod-secondary {
+    background-color: rgba(147, 223, 216, 0.24);
+}
+
+.no-padding {
+    padding: 0;
+}
+
+hr {
+    max-width: 50px;
+    border-color: #f05f40;
+    border-width: 3px;
+}
+
+.hr-primary {
+    border-color: rgba(147, 223, 216, 0.39)
+}
+
+.hr-secondary {
+    border-color: #EFF4E4;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.section-heading {
+    margin-top: 0;
+}
+
+.text-faded {
+    color: rgba(255, 255, 255, .7);
+}
+
+.text-mod-faded {
+    font-size: x-large;
+    color: #080808;
+}
+
+.text-mod-faded-secondary {
+    font-size: x-large;
+    color: #333
+}
+
+.text-mod {
+    font-size: medium;
+}
+
+.text-mod-secondary-faded {
+    color: rgba(240, 95, 64, 0.85)
+}
+
+.btn-mod {
+    border: 0;
+    border-radius: 300px;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    font-weight: 700;
+    background-color: #f05f40;
+}
+
+.btn-mod-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.btn-mod-primary:focus, .btn-mod-primary.focus {
+    color: #fff;
+    background-color: #286090;
+    border-color: #122b40;
+}
+
+.btn-mod-primary:hover {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
+
+.bg-mod-primary {
+    color: #fff;
+    background-color: #337ab7;
+}
+
+a.bg-mod-primary:hover, a.bg-mod-primary:focus {
+    background-color: #286090;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.carousel, .item, .active {
+    height: 100%;
+    margin-bottom: 0px;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#myCarousel {}
+
+@media (min-width: 768px) {
+    .navbar-default.affix {
+        border-color: rgba(34, 34, 34, .05);
+        background-color: #000;
+    }
+    .navbar-default {
+        border-color: rgba(255, 255, 255, .3);
+        background-color: transparent;
+        -webkit-transition: all .35s;
+        -moz-transition: all .35s;
+        transition: all .35s;
+    }
+    .navbar-default .nav>li>a, .navbar-default .nav>li>a:focus {
+        color: rgba(255, 255, 255, .7);
+    }
+    .navbar-default .nav>li>a:hover, .navbar-default .nav>li>a:focus:hover {
+        color: #fff;
+    }
+    .navbar-default .navbar-header .navbar-brand {
+        color: rgba(255, 255, 255, .7);
+    }
+    .container {
+        width: 750px;
+    }
+    #myCarousel {}
+}
+
+#contact-form {
+    position: relative;
+    z-index: 999;
+}
+
+#contact-form input[type=text], .contactForm textarea {
+    background: rgba(227, 231, 228, 1);
+    font-family: 'Open Sans', sans serif;
+    border: 0;
+    font-size: 16px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.contactForm textarea {
+    height: 156px;
+}
+
+#contact-form input[type=text]:focus, .contactForm textarea:focus {
+    background: #fff;
+    color: #555;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    transition: background 0.25 ease-in;
+    -moz-transition: background 0.25 ease-in;
+    -webkit-transition: background 0.25 ease-in;
+}
+
+#contact-form input[type=text] {
+    height: 60px;
+    margin-bottom: 30px;
+}
+
+#contact-form input[type=submit] {
+    color: #000;
+    width: 185px;
+    height: 60px;
+    text-shadow: none;
+    font-size: 16px;
+    padding: 0.5em;
+    letter-spacing: 0.05em;
+    margin: 0 0 20px 0;
+    display: block;
+    border: 0;
+    text-transform: none;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+#contact-form input[type=submit]:hover, #contact-form input[type=submit]:active {
+    background: #43413e !important;
+    color: #fff;
+}
+
+#contact-form textarea {
+    padding-top: 1em;
+}
+
+.foter {
+    height: 60px;
+}
+
+
+/*
+.full {
+    background: url('../assets/home-hero-2.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+*/

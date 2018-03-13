@@ -1,0 +1,26 @@
+.mod-horsLine {
+  background-color: #fff5f5;
+}
+
+.mod-text-horsLine {
+  color: #fff5f5;
+}
+
+.mod-onLine {
+  background-color: #f4fff4;
+}
+
+.mod-text-onLine {
+  color: #f4fff4;
+}
+
+.form-control:focus {
+  border-color: #66afe9;
+}
+
+.mod-modal-labels {
+  color: #9A9A9A;
+  text-transform: none;
+  font-size: 12px;
+  font-weight: 400;
+}
