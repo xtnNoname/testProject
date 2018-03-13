@@ -1,0 +1,49 @@
+{
+  "name": "thingstream",
+  "version": "0.0.1",
+  "private": "true",
+  "description": "IoT Platform",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "IoT"
+  ],
+  "author": "Bassem Boussetta",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.1",
+    "bookshelf": "^0.10.3",
+    "bookshelf-modelbase": "^2.10.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "ect": "^0.5.9",
+    "ejs": "^2.5.6",
+    "ejs-locals": "^1.0.2",
+    "emailjs": "^1.0.8",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.2",
+    "js-cookie": "^2.1.4",
+    "knex": "^0.12.9",
+    "level": "^1.6.0",
+    "level-session-store": "^2.0.1",
+    "method-override": "^2.3.8",
+    "mongoose": "^4.9.2",
+    "morgan": "^1.8.1",
+    "node-rsa": "^0.4.2",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "passport.socketio": "^3.7.0",
+    "request": "^2.81.0",
+    "serve-favicon": "^2.4.2",
+    "socket.io": "^1.7.3",
+    "socket.io-bundle": "^0.1.2",
+    "socket.io-client": "^1.7.4",
+    "sqlite3": "^3.1.8",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
