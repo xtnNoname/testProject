@@ -1,0 +1,83 @@
+{{ extend 'layouts/dashboard' }}
+{{ block 'head' : }}
+<link rel="stylesheet" href="/css/custom/alarm.css">
+{{ end }}
+{{ block 'footer' : }}
+<script type="text/javascript">
+  var devicesData = {{- @devices }};
+  var alarms = {{- @notifications }};
+  console.log("page alarm ", alarms);
+</script>
+<script src="/js/custom/alarms.js"></script>
+{{ end }}
+<div class="content">
+<div class="container-fluid">
+  <div class="row">
+
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-success"id="list">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title text-center">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Liste des notifications <i class="fa fa-bell "></i>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <div class="content" id="scrol">
+          <div class="scrollspy" data-spy="scroll" data-offset="10">
+        <div id="noteLists" class="row col-md-11">
+          <span>aucune notification disponible</span>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+    </div>
+
+  <div class="panel panel-default"id="trigger">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title text-center">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+           Déclencheur <i class="fa fa-bullhorn"></i>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+
+          <div class="col-md-5">
+            <p style="margin-bottom:15px">Sélectionner un device</p>
+            <table id="bsTable">
+
+            </table>
+            </div>
+            <div class="col-md-6 pull-right" style="margin-top:10px">
+            <form id="trigger" class="" action="#trigger" method="post" data-toggle="validator">
+            <div class="form-group">
+              <label>Description</label>
+              <textarea name="desc" value="" class="form-control" rows="3" maxlength="253"  placeholder="Saisie la discription de votre notification.."></textarea>
+            </div>
+            <div class="form-group">
+              <label>Max</label>
+              <input name="max" value="" type="number" max="151" min="-150" class="form-control" placeholder="Saisie le valeur max" required="">
+            </div>
+            <div class="form-group">
+              <label>Min</label>
+              <input name="min" value="" type="number" max="150" min="-151" class="form-control" placeholder="Saisie le valeur min" required="">
+            </div>
+
+              <button type="reset" class="btn btn-default pull-right" >Annuler</button>
+              <button id="btn-trigger" type="submit" class="btn btn-primary pull-right" style="margin-right:5px">Enregistrer</button>
+
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,103 @@
+{{ extend 'layouts/dashboard' }} {{ block 'head' : }}
+<style media="screen">
+
+    .card .table thead th:first-child {
+        padding-left: 0px !important;
+    }
+
+    .fixed-table-toolbar:after,
+    .fixed-table-pagination:after {
+        clear: none;
+    }
+</style>
+{{ end }} {{ block 'footer' : }}
+
+<script type="text/javascript">
+    var devicesData = {{- @devices }};
+    var members = {{- @members }};
+</script>
+
+<script src="/js/custom/devices.js"></script>
+
+{{ end }} {{ block 'modals' : }}
+<!-- Modal -->
+<div class="modal fade" id="deviceModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-center" id="addModalLabel">Ajouter device</h4>
+            </div>
+            <div class="modal-body">
+                <form id="addThing" class="" action="devices" method="post">
+                  <label class="control-label mod-modal-labels">Nom de device</label>
+                    <input type="text" name="name" class="form-control "value="" placeholder="Nom de device"style="margin-top:10px;margin-bottom:10px;"required>
+                    <label class="control-label mod-modal-labels">Référence de device</label>
+                    <input type="text" name="ref" class="form-control" value="" placeholder="Référence de device N/S"style="margin-bottom:10px"required>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-add" form="addThing" type="submit" class="btn btn-primary">Ajouter</button>
+                <button type="button" form="addThing" class="btn btn-default" data-dismiss="modal">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="memberModal" tabindex="-1" role="dialog" aria-labelledby="assignModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-center" id="assignModalLabel">Assigner un device à un utilisateur</h4>
+            </div>
+            <div class="modal-body">
+              <form id="assignThing" class="" action="#hello" method="post">
+              <label>Choisie un utilisateur :</label>
+              <select name='member' class="form-control" style="margin-bottom:15px">
+
+              </select>
+              </form>
+            </div>
+            <div class="modal-footer">
+                <button form="assignThing" type="submit" class="btn btn-primary">Assigner</button>
+                <button type="button" form="assignThing" class="btn btn-default" data-dismiss="modal">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}
+
+<div class="row">
+    <div class="card">
+        <div class="header">
+            <h4 class="title">Liste des devices</h4>
+        </div>
+        <div class="content">
+
+            <div id="toolbar" class="btn-group">
+
+                <button type="button" style="margin-right:2px" class="btn btn-success" data-toggle="modal" data-target="#deviceModal" data-tooltip="tooltip" title="ajouter">
+        <i class="glyphicon glyphicon-plus"></i>
+        </button>
+                <button id="btn-remove" type="button" style="margin-right:2px" class="btn btn-danger" disabled="true" data-tooltip="tooltip" title="supprimer">
+        <i class="glyphicon glyphicon-trash"></i>
+        </button>
+        <button id="btn-assign" type="button" class="btn btn-primary" disabled="true" data-toggle="modal" data-target="#memberModal" data-tooltip="tooltip" title="assigner">
+<i class="glyphicon glyphicon-share"></i>
+</button>
+            </div>
+            <table id="bsTable">
+
+            </table>
+
+            <!-- /.table-responsive -->
+
+            <div class="footer">
+                <div class="legend">
+                    <i class="fa fa-circle text-success"></i> connecté
+                    <i class="fa fa-circle text-danger"></i> non connecté
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

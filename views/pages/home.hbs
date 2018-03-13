@@ -1,0 +1,171 @@
+{{ extend 'layouts/dashboard' }} {{ block 'head' : }}
+<link href="/fonts/climacon-font/styles.css" rel="stylesheet" />
+<link href="/css/custom/home.css" rel="stylesheet" />
+ {{ end }} {{ block 'footer' : }}
+<!--skycon-icons-->
+<script src="/js/skycons.js"></script>
+
+<script src="/js/circles.min.js"></script>
+<script>
+    var devices = {{- @devices}};
+</script>
+<script src="/js/custom/home.js"></script>
+<script>
+    var icons = new Skycons({
+            "color": "#dddddd"
+        }),
+        list = [
+            "clear-night", "clear-day", "partly-cloudy-day",
+            "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+            "fog"
+        ],
+        i;
+
+    for (i = list.length; i--;)
+        icons.set(list[i], list[i]);
+
+    icons.play();
+</script>
+{{ end }}
+
+<div class="row">
+    <!--accueil-->
+    <div class="col-md-7 col-sm-6 col-xs-12">
+
+        <div class="card">
+
+
+            <div class="content">
+                <div class="header">
+                    <h4 class="title">Bienvenue <i><b>{{- @name }}</b></i></h4>
+                    <hr>
+                </div>
+                <div class="typo-line">
+                    <p class="category">quote du jour</p>
+
+                    <blockquote cite="">
+                        <p>Bien fait est mieux que bien dit.</p><small>Benjamin Franklin</small></blockquote>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5 col-sm-6 col-xs-12 pull-right">
+        <div class="card">
+
+            <div class="content">
+                <div class="container-fluid">
+                    <p class="category">Vous avez</p>
+                    <nav class="pull-right">
+                        <ul>
+                            <li style="display:inline-block">
+                                <div class="circle" id="circles-1"></div>
+
+                            </li>
+                            <li style="display:inline-block">
+                                <div class="circle" id="circles-2"></div>
+
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="footer">
+                        <div class="legend">
+                            <i class="fa fa-circle text-success"></i> connecté
+                            <i class="fa fa-circle text-danger"></i> non connecté
+                        </div>
+                        <hr>
+                        <div class="stats">
+                            <i class="fa fa-exclamation"></i> Nombre de device
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <!--accueil-->
+    <div class="col-md-8">
+        <div class="card">
+            <div class="content">
+                <div class="header">
+                    <h4 class="title">Raccourcis</h4>
+                    <p class="category">Nous vous remercions d'être ici aujourd'hui</p>
+                    <hr>
+                </div>
+                <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-plus-square-o fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+
+                                    <h3 class="huge">Ajouter device</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-plus-square-o fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+
+                                    <h3 class="huge">Ajouter utilisateur</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+
+            <div class="card card-user">
+                <div class="image">
+                    <img alt="..." src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&amp;fm=jpg&amp;h=300&amp;q=75&amp;w=400">
+                    </img>
+                </div>
+                <div class="content">
+                    <div class="author">
+                        <a href="#">
+                            <canvas class="avatar border-white" style="background-color:white" id="rain" width="100%" height="100%"></canvas>
+                            <h4 class="title">Djerba<br>
+                                <small>à ce moment</small>
+                            </h4>
+                        </a>
+                    </div>
+                    <div class="mod-center">
+                        <ul class="weather-block-info" style="list-style-type: none;">
+                            <li class="mod-center">
+                                <ul class="weather-params" id="weather-params">
+                                    <li class="active"><i class="climacon thermometer medium-high"></i> <span>14 degré</span></li>
+                                    <li class="active"><i class="climacon moon full"></i> <span>46% humidity</span></li>
+                                    <li class="active"><i class="climacon wind"></i> <span>2m/s NW</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <button class="btn btn-simple" href="#"><i class="fa fa-facebook-square"></i></button>
+                    <button class="btn btn-simple" href="#"><i class="fa fa-twitter"></i></button>
+                    <button class="btn btn-simple" href="#"><i class="fa fa-google-plus-square"></i></button>
+
+                </div>
+            </div>
+        </div>
+
+</div>
+</div>

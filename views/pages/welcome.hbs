@@ -1,0 +1,200 @@
+{{ extend 'layouts/welcome' }}
+{{ block 'welcome-header' : }}
+<!-- custom css -->
+<link rel="stylesheet" href="/css/custom/welcome.css">
+<link rel="stylesheet" href="/css/leaflet.css">
+<link rel="stylesheet" href="/css/leaflet.label.css">
+{{ end }}
+{{ block 'welcome-footer' : }}
+<!-- custom java script / jquery -->
+<!-- leaflet js -->
+<script src="/js/custom/welcome.js"></script>
+<script src="/js/leaflet.js"></script>
+<script src="/js/leaflet-src.js"></script>
+<script src="/js/leaflet.label.js"></script>
+
+<script src="/js/map.js"></script>
+<script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+</script>
+{{ end }}
+{{ block 'welcome-modal' : }}
+
+{{ end }}
+<!--  main nav  -->
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+              <a class="navbar-brand navbar-mod-brand" href="#page-top"><img src="img/thingstream-brand.png" alt=""></a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="navbar">
+
+              <ul class="nav navbar-nav navbar-right" style="margin-right: 0px;">
+                  <li><a href="#about">A PROPOS</a></li>
+                  <li><a href="#services">SERVICES</a></li>
+                  <li><a href="#map">Map</a></li>
+                  <li><a href="#contact">CONTACT</a></li>
+                  <li>{{- @connection }}</li>
+              </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+  </nav>
+
+  <!-- Full Page Image Background Carousel Header -->
+  <header id="myCarousel" class="thumbnail carousel slide">
+
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for Slides -->
+      <div class="carousel-inner">
+          <div class="item active">
+              <!-- Set the first background image using inline CSS below. -->
+              <div class="fill" style="background-image:url('img/accueil.png');"></div>
+              <div class="carousel-caption">
+                <h1 style="font-size: 65px;">votre plateforme IoT</h1>
+                  <p style="color:#080808; letter-spacing:2pt">actualités météo , activités , tout ce que vous concernes et plus!</p>
+              <p>
+                <a class="btn btn-lg btn-success" href="/signup">Créer votre compte</a>
+              </p>
+              </div>
+          </div>
+          <div class="item">
+              <!-- Set the third background image using inline CSS below. -->
+              <div class="fill" style="background-image:url('img/accueil2.jpg');"></div>
+              <div class="carousel-caption">
+                  <h2>Gérer device</h2>
+              </div>
+          </div>
+          <div class="item">
+              <!-- Set the second background image using inline CSS below. -->
+              <div class="fill" style="background-image:url('img/accueil1.jpg');"></div>
+              <div class="carousel-caption">
+                  <h2>Caption 2</h2>
+              </div>
+          </div>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="icon-prev"></span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="icon-next"></span>
+      </a>
+
+  </header>
+
+  <section class="section-mod-primary" id="about">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <h2 class="section-heading" style="color:#999">À propos</h2>
+                  <hr class="hr-primary">
+                  <p class="text-faded text-mod-faded"><b>thing stream</b> permet la gestion des périphériques iot indépendants. Notre plate-forme Internet des objets se connecte et gère vos machines sans effort, afin que vous puissiez vous concentrer sur la valeur de votre entreprise en ajoutant des activités.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+  <section class="section-mod-secondary" id="services">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <h2 class="section-heading" style="color:#999">Services</h2>
+                  <hr class="hr-secondary">
+                  <p class="text-faded text-mod-faded-secondary"></p>
+
+              </div>
+          </div>
+      </div>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <div class="col-lg-4 col-md-6 text-center">
+                      <div class="service-box">
+                          <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" style="visibility: visible; animation-name: bounceIn;"></i>
+                          <h3>Consulter météo</h3>
+                          <p class="text-muted text-mod-faded-secondary text-mod">#####</p>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 text-center">
+                      <div class="service-box">
+                          <i class="fa fa-4x fa-graduation-cap wow bounceIn text-primary" style="visibility: visible; animation-name: bounceIn;"></i>
+                          <h3>Gérer device</h3>
+                          <p class="text-muted text-mod-faded-secondary text-mod">#######</p>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-12 text-center">
+                      <div class="service-box">
+                          <i class="fa fa-4x fa-futbol-o wow bounceIn text-primary" style="visibility: visible; animation-name: bounceIn;"></i>
+                          <h3>Gérer données</h3>
+                          <p class="text-muted text-mod-faded-secondary text-mod">########</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+      <section class="section-mod-primary"id="map">
+
+      </section>
+      <section class="section-mod-secondary" id="contact"style="padding-bottom:15px">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading" style="color:#999">Contact</h2>
+              <hr class="hr-secondary">
+              <h3></h3>
+              <div class="col-md-12">
+                <div class="cform" id="contact-form">
+                  <div id="sendmessage"></div>
+                  <div id="errormessage"></div>
+                  <form action="" method="post" role="form" class="contactForm">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="field your-email form-group">
+                          <input type="text" class="form-control" name="email" id="email" placeholder="Votre e-mail" data-rule="email" />
+                          <div class="validation"></div>
+                        </div>
+                        <div class="field your-name form-group">
+                          <input type="text" name="name" class="form-control" id="name" placeholder="Votre prénom" data-rule="minlen:4" />
+                          <div class="validation"></div>
+                        </div>
+
+                      </div>
+                      <div class="col-md-6">
+                        <div class="field message form-group">
+                          <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Écris quelque chose pour nous" placeholder="Message"></textarea>
+                          <div class="validation"></div>
+                        </div>
+                        <input type="submit" value="Envoyer" class="btn btn-theme pull-right">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <!-- ./span12 -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+  <footer class="foter section-mod-primary">
+
+  </footer>

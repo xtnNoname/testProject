@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{- include 'partials/head' }}
+    {{- content 'head' }}
+</head>
+
+<body>
+    {{- content 'modals' }}
+    <div class="wrapper">
+        {{- include 'partials/sidebar' }}
+
+            <div class="main-panel">
+                {{- include 'partials/navbar' }}
+
+
+                    <div class="content">
+                        <div class="container-fluid">
+                            <!--content goes here-->
+                            {{ content }}
+                        </div>
+                    </div>
+
+
+
+{{- include 'partials/footer' }}
+            </div>
+    </div>
+
+
+</body>
+{{- include 'partials/scripts' }}
+{{- content 'footer' }}
+
+</html>

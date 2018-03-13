@@ -1,0 +1,46 @@
+{{ extend 'layouts/sign' }}
+
+{{ block 'head' : }}
+{{ end }}
+
+{{ block 'footer' : }}
+<!--  Password meter Plugin    -->
+<script src="js/login.js"></script>
+<script type="text/javascript">
+    $("title").html("inscription");
+    $("#main").removeClass("col-md-4 col-md-offset-4");
+    $("#main").addClass("col-md-6 col-md-offset-3");
+</script>
+{{ end }}
+
+<form method="post" action="/signup" data-toggle="validator" role="login">
+    <div class="header">
+        <h3>Inscrivez-Vous</h3>
+    </div>
+    <hr>
+    <div class="form-group">
+        <input type="text" name="firstName" required class="form-control input-lg" placeholder="Nom" value="" data-maxlength="64" />
+    </div>
+    <div class="form-group">
+        <input type="text" name="lastName" required class="form-control input-lg" placeholder="Prénom" value="" data-maxlength="64" />
+    </div>
+    <div class="form-group">
+        <input type="text" name="userName" required class="form-control input-lg" placeholder="Nom d'utilisateur" value="" data-maxlength="64" />
+    </div>
+    <div class="form-group has-feedback">
+        <input type="email" name="email" required class="form-control input-lg" placeholder="Email" value="" />
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+    </div>
+    <div class="form-group">
+        <input type="password" name="password" id="password" required class="form-control input-lg" placeholder="Mot de passe" value="" data-minlength="6" />
+        <div class="pwstrength_viewport_progress"></div>
+    </div>
+    <div class="form-group">
+        <input type="password" name="check" required class="form-control input-lg" placeholder="Confirmer mot de passe" value="" data-match="#password" />
+    </div>
+    <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">S'inscrire</button>
+    <button type="reset" name="annuler" class="btn btn-lg btn-default btn-block">Annuler</button>
+    <div>
+        <a href="/signin">Connexion</a>
+    </div>
+</form>

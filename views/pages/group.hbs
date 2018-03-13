@@ -1,0 +1,84 @@
+{{ extend 'layouts/dashboard' }}
+
+{{ block 'head' : }}
+<style media="screen">
+
+    .card .table thead th:first-child {
+        padding-left: 0px !important;
+    }
+
+    .fixed-table-toolbar:after,
+    .fixed-table-pagination:after {
+        clear: none;
+    }
+</style>
+{{ end }}
+{{ block 'footer' : }}
+<script type="text/javascript">
+    var membersData = {{- @members }};
+</script>
+
+<script src="/js/custom/group.js"></script>
+
+{{ end }}
+{{ block 'modals' : }}
+<!-- Modal -->
+<div class="modal fade" id="memberModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-center" id="addModalLabel">Ajouter utilisateur au groupe</h4>
+            </div>
+            <div class="modal-body">
+                <form id="addMember" class="" action="group" method="post">
+                  <label class="control-label mod-modal-labels">Nom d'utilisateur</label>
+                    <input type="text" name="userName" class="form-control" value="" placeholder="Saisie nom d'utilisateur" required style="margin-bottom:20px">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-add" form="addMember" type="submit" class="btn btn-primary">Ajouter</button>
+                <button type="button" form="addMember" class="btn btn-default" data-dismiss="modal">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}
+<div class="row">
+    <div class="card">
+        <div class="header">
+            <h4 class="title">Liste des invitation</h4>
+        </div>
+        <div id="alerts" class="content">
+
+
+
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="card">
+        <div class="header">
+            <h4 class="title">Liste des membres</h4>
+        </div>
+        <div class="content">
+
+            <div id="toolbar" class="btn-group">
+
+                <button type="button" style="margin-right:2px" class="btn btn-success" data-toggle="modal" data-target="#memberModal" data-tooltip="tooltip" title="inviter">
+        <i class="glyphicon glyphicon-plus"></i>
+        </button>
+                <button id="btn-remove" type="button" style="margin-right:2px" class="btn btn-danger" disabled="true" data-tooltip="tooltip" title="supprimer">
+        <i class="glyphicon glyphicon-trash"></i>
+        </button>
+            </div>
+            <table id="bsTable">
+
+            </table>
+
+            <!-- /.table-responsive -->
+
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,119 @@
+{{ extend 'layouts/dashboard' }} {{ block 'head' : }} {{ end }}
+{{ block 'footer' : }}
+<script src="/js/custom/user.js"></script>
+{{ end }} {{ block 'modals' : }}
+<!--modal password-->
+<div class="modal fade" id="password" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Changer mot de passe</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="content">
+
+                                <form id="updatePass" action="user" method="post" data-toggle="validator" role="form">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label mod-modal-labels">Actuel</label>
+                                                <input type="password" name="new" value="" class="form-control" placeholder="Saisie votre mot actuel" required="">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label class="control-label mod-modal-labels">Nouveau</label>
+                                              <input type="password" data-minlength="6" name="old" value="" class="form-control" id="inputPassword" placeholder="Sasie un nouveau mot de passe" required>
+                                              <div class="help-block">Minimum 6 caractères</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="col-md-offset-3 col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label mod-modal-labels">Confirmer</label>
+                                                <input type="password" name="check" value="" class="form-control" data-match="#inputPassword" data-match-error="Oups, ceux-ci ne correspondent pas" placeholder="Confirmer votre mot de passe" required>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                </form>
+
+                            </div>
+
+                            <div class="modal-footer">
+                                <button id="upKey" type="submit" form="updatePass" class="btn btn-primary">Valider</button>
+                                <button type="button" form="updatePass" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end modal contact -->
+{{ end }}
+<!--le contenu-->
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!--editer profil-->
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Profil</h4>
+                </div>
+                <div class="content">
+                    <form id="profile" action="user" method="post">
+                        <div class="row" style="margin:30px auto;">
+                            <div class="col-md-5">
+
+                                <div class="form-group">
+                                    <label>Nom d'utilisateur</label>
+                                    <input type="text" value="{{- @user.userName}}" class="form-control" placeholder="Nom d'utilisateur" disabled="">
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label>Adresse e-mail</label>
+                                    <input type="email" value="{{- @user.email}}" class="form-control" placeholder="Email" disabled="">
+                                </div>
+                            </div>
+                        </div>
+                        <hr style="margin:30px auto">
+                        <div class="row" style="margin:30px auto;">
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label><i class="fa fa-edit fa-lg"></i> Nom</label>
+                                    <input type="text" name="first" value="{{- @user.firstName}}" class="form-control" placeholder="Nom">
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label><i class="fa fa-edit fa-lg"></i> Prénom</label>
+                                    <input type="text" name="last" value="{{- @user.lastName}}" class="form-control" placeholder="Prénom">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-info btn-fill pull-right" style="margin-left:5px;margin-bottom:20px;">Mettre à jour le profil</button>
+                        <button type="button" class="btn btn-info btn-fill pull-right" data-toggle="modal" data-target="#password">Changer mot de passe</button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+            <!--end profile-->
+        </div>
+    </div>
+</div>
+<!--end content-->
